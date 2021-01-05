@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 // config file allows all sensitive data to be in one separate file
 // this extracts variables from json
-const { prefix, token } = require('./config.json');
+// const { prefix, token } = require('./config.json');
 
 // The client connects to and uses the Discord API
 const client = new Discord.Client();
@@ -55,4 +55,4 @@ client.on('message', message => {
 })
 
 // Gives client access to bot using bot's token, must be last line
-client.login(token);
+client.login(process.env.DJS_TOKEN);
