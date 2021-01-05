@@ -15,10 +15,11 @@ client.on("guildCreate", (guild) => {
     const embed = new Discord.MessageEmbed()
         .setTitle('Greetings!')
         .setColor('#DAF7A6')
+        .setThumbnail('')
         .addFields(
             {
-                name: "`I am the ```diffMass Unban Bot!``` Nice to meet you, beep boop. I hope I can serve to counteract any griefing attempts and save you lots of time!\n\n`",
-                value: `As of now, these are my commands: \n**!munban** - Mass unban all members of your server.`
+                name: "`I am the Mass Unban Bot! Nice to meet you, beep boop. I hope I can serve to counteract any griefing attempts and save you lots of time!`",
+                value: `\n\nAs of now, these are my commands: \n!munban - Mass unban all members of your server.`
             }
         )
 
