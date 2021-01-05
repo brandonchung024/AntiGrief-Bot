@@ -6,24 +6,18 @@ const Discord = require('discord.js');
 
 // The client connects to and uses the Discord API
 const client = new Discord.Client();
-/*
-client.on("guildCreate", guild => {
-    let channelID;
-    let channels = guild.channels.cache;
 
-    channelLoop:
-    for (let key in channels) {
-        let c = channels[key];
-        if (c[1].type === "text") {
-            channelID = c[0];
-            break channelLoop;
-        }
+client.on("guildCreate", (guild) => {
+    const channel = guild.channels.cache.find(
+      (c) => c.type === "text" && c.permissionsFor(guild.me).has("SEND_MESSAGES")
+    );
+    if (channel) {
+      channel.send(`Thanks for inviting me into this server!`);
+    } else {
+      console.log(`Can't send any arriving message`);
     }
-
-    let channel = guild.channels.cache.get(guild.systemChannelID || channelID);
-    channel.send(`Thanks for inviting me into this server!`);
 });
-*/
+
 client.once('ready', () => {
     console.log('AntiGrief Bot is active!');
 });
