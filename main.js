@@ -31,7 +31,7 @@ client.once('ready', () => {
 client.on('message', message => {
     // Syntax of "`" indicates template literals
     // ${expression} is used for placeholders
-    if (message.content === (`${prefix}munban`)) {
+    if (message.content === (`${process.env.PREFIX}munban`)) {
         if (message.member.hasPermission("BAN_MEMBERS")) {
             var count = 0;
             message.guild.fetchBans().then(bans => {
