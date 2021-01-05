@@ -6,7 +6,7 @@ const { prefix, token } = require('./config.json');
 
 // The client connects to and uses the Discord API
 const client = new Discord.Client();
-
+/*
 client.on("guildCreate", guild => {
     let channelID;
     let channels = guild.channels.cache;
@@ -23,7 +23,7 @@ client.on("guildCreate", guild => {
     let channel = guild.channels.cache.get(guild.systemChannelID || channelID);
     channel.send(`Thanks for inviting me into this server!`);
 });
-
+*/
 client.once('ready', () => {
     console.log('AntiGrief Bot is active!');
 });
