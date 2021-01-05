@@ -16,7 +16,10 @@ client.on("guildCreate", (guild) => {
         .setTitle('Greetings!')
         .setColor('#DAF7A6')
         .addFields(
-            {value:"`I am the Mass Unban Bot! Nice to meet you, beep boop. I hope I can serve to counteract any griefing attempts and save you lots of time!\n\n**As of now, these are my commands: \n**!munban** - Mass unban all members of your server.`"}
+            {
+                name:"",
+                value:"`I am the Mass Unban Bot! Nice to meet you, beep boop. I hope I can serve to counteract any griefing attempts and save you lots of time!\n\nAs of now, these are my commands: \n!munban - Mass unban all members of your server.`"
+            }
         )
 
     if (channel) {
