@@ -11,8 +11,9 @@ client.on("guildCreate", (guild) => {
     const channel = guild.channels.cache.find(
       (c) => c.type === "text" && c.permissionsFor(guild.me).has("SEND_MESSAGES")
     );
+
     if (channel) {
-      channel.send(`Thanks for inviting me into this server!`);
+      channel.send('**Hello! I am the Mass Unban Bot! Nice to meet you, beep boop. I hope I can help counteract any griefing attempts to your server and save lots of time!\n\n\n**As of now, these are my commands: \n !munban - Mass unban all members of your server.');
     } else {
       console.log(`Can't send any arriving message`);
     }
