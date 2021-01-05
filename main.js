@@ -12,8 +12,15 @@ client.on("guildCreate", (guild) => {
       (c) => c.type === "text" && c.permissionsFor(guild.me).has("SEND_MESSAGES")
     );
 
+    const embed = new Discord.MessageEmbed()
+        .setTitle('Greetings!')
+        .setColor('#DAF7A6')
+        .addFields(
+            {value:"`I am the Mass Unban Bot! Nice to meet you, beep boop. I hope I can serve to counteract any griefing attempts and save you lots of time!\n\n**As of now, these are my commands: \n**!munban** - Mass unban all members of your server.`"}
+        )
+
     if (channel) {
-      channel.send('**Hello! I am the Mass Unban Bot! Nice to meet you, beep boop. I hope I can help counteract any griefing attempts to your server and save lots of time!\n\n\n**As of now, these are my commands: \n !munban - Mass unban all members of your server.');
+      channel.send(embed);
     } else {
       console.log(`Can't send any arriving message`);
     }
