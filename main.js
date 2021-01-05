@@ -44,7 +44,8 @@ client.on('message', message => {
                     count++;
                     message.guild.members.unban(ban.user.id);
                 });
-            }).then(() => message.reply(`${count} user(s) have been unbanned. There are now ${bans.size} user(s) on the ban list. If more exist, please rerun the command.`)).catch(e => console.log(e));
+                message.reply(`There are now ${bans.size} user(s) on the ban list. If more exist, please rerun the command.`).catch(e=>console.log(e));
+            }).then(() => message.reply(`${count} user(s) have been unbanned.`)).catch(e => console.log(e));
         } else {
             message.reply("You do not have proper permissions for this command.");
         }
