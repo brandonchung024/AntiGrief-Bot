@@ -1,9 +1,5 @@
 const Discord = require('discord.js');
 
-// config file allows all sensitive data to be in one separate file
-// this extracts variables from json
-// const { prefix, token } = require('./config.json');
-
 // The client connects to and uses the Discord API
 const client = new Discord.Client();
 
@@ -19,19 +15,21 @@ client.on("guildCreate", (guild) => {
         .addFields(
             {
                 name: "`I am the Mass Unban Bot! Nice to meet you, beep boop. I hope I can serve to counteract any griefing attempts and save you lots of time!`",
-                value: `\n\nAs of now, these are my commands: \n!munban - Mass unban all members of your server.`
+                value: `\n\nAs of now, these are my commands:\n!help - Show available commands.\n!munban - Mass unban all members of your server.`
             }
         )
 
     if (channel) {
-      channel.send(embed);
+        setTimeout(function() {
+            channel.send(embed);
+        }, 1000);
     } else {
-      console.log(`Can't send any arriving message`);
+        console.log(`Can't send any arriving message`);
     }
 });
 
 client.once('ready', () => {
-    console.log('AntiGrief Bot is active!');
+    console.log('Mass Unban Bot is active!');
 });
 
 client.on('message', message => {
@@ -43,12 +41,39 @@ client.on('message', message => {
             message.guild.fetchBans().then(bans => {
                 bans.forEach(ban => {
                     count++;
-                    message.guild.members.unban(ban.user.id);
+                    setTimeout(function() {
+                        message.guild.members.unban(ban.user.id);
+                    }, 1000);
                 });
-                message.reply(`There are now ${bans.size - count} user(s) on the ban list. If more exist, please rerun the command.`).catch(e=>console.log(e));
-            }).then(() => message.reply(`${count} user(s) have been unbanned.`)).catch(e => console.log(e));
+                setTimeout(function() {
+                    message.reply(`There are now ${bans.size - count} user(s) on the ban list. If more exist, please rerun the command.`).catch(e=>console.log(e));
+                }, 1000);
+            }).then(() => setTimeout(function() {message.reply(`${count} user(s) have been unbanned.`); }, 1000)).catch(e => console.log(e));
         } else {
-            message.reply("You do not have proper permissions for this command.");
+            setTimeout(function() {
+                message.reply("You do not have proper permissions for this command.");
+            }, 1000);
+        }
+    } else if (message.content === (`${process.env.PREFIX}help`)) {
+        if (message.member.hasPermission("BAN_MEMBERS")) {
+            const embed = new Discord.MessageEmbed()
+                .setTitle('Help')
+                .setColor('#DAF7A6')
+                .setThumbnail('')
+                .addFields(
+                    {
+                        name: "`Need assistance? Here's my list of commands.`",
+                        value: `\n\n!help - Show available commands.\n!munban - Mass unban all members of your server.`
+                    }
+                )
+
+            setTimeout(function() {
+                message.reply(embed);
+            }, 1000);
+        } else {
+            setTimeout(function() {
+                message.reply("You do not have proper permissions for this command.");
+            }, 1000);
         }
     }
 })
