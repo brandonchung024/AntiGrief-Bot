@@ -55,16 +55,30 @@ client.on('message', message => {
                 message.reply("You do not have proper permissions for this command.");
             }, 1000);
         }*/
-        message.reply('Test');
-        message.reply('Test');
-        message.reply('Test');
-        message.reply('Test');
-        message.reply('Test');
-        message.reply('Test');
-        message.reply('Test');
-        message.reply('Test');
-        message.reply('Test');
-        message.reply('Test');
+        setTimeout(function() {
+            message.reply('Test');
+        }, 1000);
+        setTimeout(function() {
+            message.reply('Test');
+        }, 1000);
+        setTimeout(function() {
+            message.reply('Test');
+        }, 1000);
+        setTimeout(function() {
+            message.reply('Test');
+        }, 1000);
+        setTimeout(function() {
+            message.reply('Test');
+        }, 1000);
+        setTimeout(function() {
+            message.reply('Test');
+        }, 1000);
+        setTimeout(function() {
+            message.reply('Test');
+        }, 1000);
+        setTimeout(function() {
+            message.reply('Test');
+        }, 1000);
     } else if (message.content === (`${process.env.PREFIX}help`)) {
         if (message.member.hasPermission("BAN_MEMBERS")) {
             const embed = new Discord.MessageEmbed()
