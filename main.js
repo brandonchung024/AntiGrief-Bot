@@ -36,6 +36,7 @@ client.on('message', message => {
     // Syntax of "`" indicates template literals
     // ${expression} is used for placeholders
     if (message.content === (`${process.env.PREFIX}munban`)) {
+        /*
         if (message.member.hasPermission("BAN_MEMBERS")) {
             var count = 0;
             message.guild.fetchBans().then(bans => {
@@ -53,7 +54,17 @@ client.on('message', message => {
             setTimeout(function() {
                 message.reply("You do not have proper permissions for this command.");
             }, 1000);
-        }
+        }*/
+        message.reply('Test');
+        message.reply('Test');
+        message.reply('Test');
+        message.reply('Test');
+        message.reply('Test');
+        message.reply('Test');
+        message.reply('Test');
+        message.reply('Test');
+        message.reply('Test');
+        message.reply('Test');
     } else if (message.content === (`${process.env.PREFIX}help`)) {
         if (message.member.hasPermission("BAN_MEMBERS")) {
             const embed = new Discord.MessageEmbed()
