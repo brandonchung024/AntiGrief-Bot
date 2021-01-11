@@ -55,30 +55,22 @@ client.on('message', message => {
                 message.reply("You do not have proper permissions for this command.");
             }, 1000);
         }*/
-        setTimeout(function() {
-            message.reply('Test');
-        }, 1000);
-        setTimeout(function() {
-            message.reply('Test');
-        }, 1000);
-        setTimeout(function() {
-            message.reply('Test');
-        }, 1000);
-        setTimeout(function() {
-            message.reply('Test');
-        }, 1000);
-        setTimeout(function() {
-            message.reply('Test');
-        }, 1000);
-        setTimeout(function() {
-            message.reply('Test');
-        }, 1000);
-        setTimeout(function() {
-            message.reply('Test');
-        }, 1000);
-        setTimeout(function() {
-            message.reply('Test');
-        }, 1000);
+        // TODO: For the future, maybe monitor rate limit of the bot on its own, not individual functions.
+        // TODO: Rate limit does not work yet
+        setTimeout(function() {}, 1000);
+        message.reply('Test');
+        setTimeout(function() {}, 1000);
+        message.reply('Test');
+        setTimeout(function() {}, 1000);
+        message.reply('Test');
+        setTimeout(function() {}, 1000);
+        message.reply('Test');
+        setTimeout(function() {}, 1000);
+        message.reply('Test');
+        setTimeout(function() {}, 1000);
+        message.reply('Test');
+        setTimeout(function() {}, 1000);
+        message.reply('Test');
     } else if (message.content === (`${process.env.PREFIX}help`)) {
         if (message.member.hasPermission("BAN_MEMBERS")) {
             const embed = new Discord.MessageEmbed()
